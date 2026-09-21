@@ -1,0 +1,93 @@
+---
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Casa Suntuosa · Salón de Belleza & Tratamientos Capilares en Montería",
+  description = "Salón de belleza de alta gama en Barrio La Castellana, Montería. Especialistas en alisados de keratina sin formol, botox capilar, colorimetría y productos profesionales de laboratorio.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://casasuntuosa.co");
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Casa Suntuosa",
+  "image": "https://casasuntuosa.co/assets/logo.svg",
+  "telephone": "+573001234567",
+  "email": "hola@casasuntuosa.co",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cra. 6 #62-31, Barrio La Castellana",
+    "addressLocality": "Montería",
+    "addressRegion": "Córdoba",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 8.7612,
+    "longitude": -75.8856
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    }
+  ],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/casaasmr/",
+    "https://www.instagram.com/casasuntuosa/?hl=es"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1b1016" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Casa Suntuosa" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Typography: Fraunces & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <title>{title}</title>
+  </head>
+  <body class="relative min-h-screen bg-cream-50 text-ink-900 selection:bg-gold-300 selection:text-ink-950">
+    <slot />
+  </body>
+</html>

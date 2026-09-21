@@ -1,0 +1,119 @@
+---
+import { Counter } from "@/lib/motion";
+import { SectionLabel } from "@/components/Brand";
+import { IMG } from "@/data/salon";
+
+const benefits = [
+  {
+    title: "Diagnóstico capilar previo",
+    body: "Análisis de elasticidad y porosidad antes de cualquier producto. Tratamos la necesidad real de tu hebra, sin improvisar.",
+    icon: "M11 4a7 7 0 100 14 7 7 0 000-14zm9 16l-4.2-4.2",
+  },
+  {
+    title: "Fórmulas seguras y sin formol",
+    body: "Protocolos suaves y efectivos sin emanaciones tóxicas. Aptos para cabello tinturado, decolorado o sensibilizado.",
+    icon: "M12 3l7 3v6c0 4.4-3 8.2-7 9-4-0.8-7-4.6-7-9V6l7-3z",
+  },
+  {
+    title: "Anti-humedad del Sinú",
+    body: "Formulaciones concebidas para la humedad y el calor de Montería. Tu peinado y alisado se mantienen impecables.",
+    icon: "M12 3s6 6.4 6 10.2A6 6 0 116 13.2C6 9.4 12 3 12 3z",
+  },
+  {
+    title: "Puntualidad en agenda",
+    body: "Atención estricta con reserva previa. Respetamos tu tiempo para que disfrutes tu visita sin esperas.",
+    icon: "M12 6v6l4 2M12 21a9 9 0 110-18 9 9 0 010 18z",
+  },
+  {
+    title: "Línea propia de mantenimiento",
+    body: "Shampoos sin sal, acondicionadores con ácido glicólico y kits completos para cuidar tu inversión en casa.",
+    icon: "M4 10l8-6 8 6v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9z",
+  },
+  {
+    title: "Ambiente relajante y exclusivo",
+    body: "Instalaciones climatizadas en La Castellana, sillones ergonómicos, aromaterapia y bebidas de cortesía.",
+    icon: "M5 20V9l7-5 7 5v11M9 20v-6h6v6",
+  },
+];
+
+const stats = [
+  { value: 1200, suffix: "+", label: "Clientas atendidas" },
+  { value: 4.9, suffix: "/5", label: "Calificación Google", decimals: 1 },
+  { value: 95, suffix: "%", label: "Repiten su tratamiento" },
+  { value: 12, suffix: " años", label: "Trayectoria en Montería" },
+];
+---
+
+<section id="experiencia" class="relative scroll-mt-24 overflow-hidden bg-ink-950 py-24 text-cream-100 lg:py-32">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(211,169,95,0.12)_0%,rgba(180,89,108,0.08)_40%,transparent_85%)]"></div>
+    <div class="noise-overlay absolute inset-0 opacity-[0.22] mix-blend-overlay"></div>
+  </div>
+
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+      <div>
+        <SectionLabel light>Por qué Casa Suntuosa</SectionLabel>
+
+        <h2 class="mt-5 font-display text-[2.1rem] font-light leading-[1.08] tracking-[-0.025em] text-cream-50 sm:text-5xl">
+          No transformamos tu cabello por un día.
+          <br />
+          <span class="italic font-medium text-gradient-gold">Cuidamos su salud para siempre.</span>
+        </h2>
+
+        <p class="mt-5 max-w-lg text-[1rem] leading-relaxed text-cream-200/75">
+          En Casa Suntuosa creemos que un cabello extraordinario no depende de la suerte, sino del diagnóstico preciso y del uso de productos formulados con rigor científico.
+        </p>
+
+        <div class="mt-9 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 shadow-xl">
+          {stats.map((s) => (
+            <div class="bg-ink-950/85 px-5 py-6 backdrop-blur">
+              <p class="font-display text-3xl font-light text-gold-200">
+                <Counter client:visible value={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
+              </p>
+              <p class="mt-1 text-[0.76rem] uppercase tracking-[0.14em] text-cream-200/60 font-medium">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          {[IMG.salonA, IMG.salonB, IMG.salonC].map((src) => (
+            <div class="group overflow-hidden rounded-xl border border-white/10 shadow-md">
+              <img
+                src={src}
+                alt="Instalaciones de Casa Suntuosa en Montería"
+                loading="lazy"
+                class="h-24 w-full object-cover opacity-80 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100 sm:h-28"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        {benefits.map((b) => (
+          <div class="group glass-dark h-full rounded-2xl p-5 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-300/40 hover:bg-white/10 border border-white/5">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-gold-300/25 to-gold-600/15 text-gold-200 ring-1 ring-gold-300/25 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <svg
+                viewBox="0 0 24 24"
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={b.icon}></path>
+              </svg>
+            </span>
+            <h3 class="mt-4 font-display text-lg text-cream-50 font-medium">{b.title}</h3>
+            <p class="mt-2 text-[0.86rem] leading-relaxed text-cream-200/70">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

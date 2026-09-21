@@ -1,0 +1,58 @@
+---
+const brands = [
+  "L'ORÉAL PROFESSIONNEL",
+  "KÉRASTASE",
+  "OLAPLEX",
+  "WELLA PROFESSIONALS",
+  "SCHWARZKOPF",
+  "MOROCCANOIL",
+  "REDKEN",
+  "CASA SUNTUOSA LAB",
+];
+
+const badges = [
+  { label: "Registro Sanitario", detail: "Fórmulas profesionales seguras" },
+  { label: "Estilistas Certificadas", detail: "Técnicas internacionales de color" },
+  { label: "Protocolos Anti-Humedad", detail: "Especialistas en clima del Sinú" },
+  { label: "Domicilios en Montería", detail: "Envíos por solo $4.000" },
+];
+---
+
+<section aria-label="Marcas y garantías" class="relative border-y border-ink-900/8 bg-white/70 py-10 backdrop-blur-sm">
+  <p class="text-center text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-ink-600">
+    Línea propia de laboratorio & marcas profesionales de clase mundial
+  </p>
+
+  <div class="marquee-mask relative mt-7 flex overflow-hidden">
+    <div class="animate-marquee flex shrink-0 items-center gap-12 pr-12 sm:gap-16 sm:pr-16">
+      {[...brands, ...brands].map((b) => (
+        <span
+          class="whitespace-nowrap font-display text-sm font-medium tracking-[0.2em] text-ink-900/40 transition-colors duration-300 hover:text-ink-900/80 sm:text-base"
+        >
+          {b}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <div class="mx-auto mt-9 grid w-full max-w-6xl grid-cols-2 gap-3 px-4 sm:px-6 lg:grid-cols-4">
+    {badges.map((b) => (
+      <div class="group flex h-full items-start gap-3 rounded-2xl border border-ink-900/8 bg-cream-50/80 px-4 py-3.5 transition-all duration-400 hover:-translate-y-1 hover:border-gold-400/50 hover:shadow-[0_18px_38px_-22px_rgba(27,16,22,0.45)]">
+        <svg
+          viewBox="0 0 24 24"
+          class="mt-0.5 h-4 w-4 shrink-0 text-gold-500 transition-transform duration-400 group-hover:scale-110"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          aria-hidden="true"
+        >
+          <path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div>
+          <p class="text-[0.82rem] font-semibold leading-tight text-ink-900">{b.label}</p>
+          <p class="mt-0.5 text-[0.72rem] text-ink-600">{b.detail}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,12 @@
+node_modules
+dist
+.astro
+.git
+.github
+.gemini
+odd
+docs
+*.log
+.DS_Store
+.env
+.env.*

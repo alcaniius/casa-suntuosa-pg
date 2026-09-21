@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero.astro";
+import SocialProof from "@/components/SocialProof.astro";
+import Services from "@/components/Services";
+import Products from "@/components/Products";
+import Testimonials from "@/components/Testimonials.astro";
+// import Pricing from "@/components/Pricing";
+// import Faq from "@/components/Faq";
+import FinalCta from "@/components/FinalCta";
+import Footer from "@/components/Footer.astro";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+---
+
+<Layout
+  title="Casa Suntuosa · Salón de Belleza & Tratamientos Capilares en Montería"
+  description="Salón de belleza de alta gama en Barrio La Castellana, Montería. Especialistas en alisados de keratina, botox capilar, colorimetría y productos profesionales de laboratorio."
+>
+  <ScrollProgress client:load />
+  <Navbar client:load />
+  
+  <main id="main-content">
+    <Hero />
+    <SocialProof />
+    <Services client:visible />
+    <Products client:visible />
+    <Testimonials />
+    {/* Secciones ocultas temporalmente (descomentar para reactivar) */}
+    {/* <Pricing client:visible /> */}
+    {/* <Faq client:visible /> */}
+    <FinalCta client:visible />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp client:idle />
+</Layout>
