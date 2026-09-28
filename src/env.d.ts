@@ -18,4 +18,7 @@ declare module "react" {
   interface ScriptHTMLAttributes<T> {
     "set:html"?: string;
   }
+  interface SVGAttributes<T> {
+    class?: string;
+  }
 }
