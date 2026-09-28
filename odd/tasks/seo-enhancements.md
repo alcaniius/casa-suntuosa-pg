@@ -1,7 +1,8 @@
 # Tasks: Optimización SEO Casa Suntuosa
 
 Feature: `seo-enhancements`
-Status: In Progress
+Status: Completed
+Commit: `202a1e3`
 Delivery Strategy: `ask-on-risk`
 TDD Mode: Off (Configuración SEO, metadatos, robots.txt, sitemap y Schema JSON-LD; verificado vía `astro check` y `astro build`)
 Engram Mirror: `odd/seo-enhancements/tasks`
