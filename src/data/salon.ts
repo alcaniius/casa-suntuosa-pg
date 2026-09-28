@@ -2,10 +2,10 @@ export const SALON_INFO = {
   name: "Casa Suntuosa",
   tagline: "Salón de Belleza & Tratamientos Capilares",
   city: "Montería, Córdoba",
-  address: "Cra. 6 #62-31, Barrio La Castellana",
-  phone: "(+57) 300 123 4567",
-  whatsappNumber: "573001234567",
-  email: "hola@casasuntuosa.co",
+  address: "Calle 41 #1B 70",
+  phone: "(+57) 322 592 2494",
+  whatsappNumber: "573225922494",
+  email: "info@casasuntuosa.shop",
   schedule: "Lunes a Sábado: 8:00 a.m. – 7:00 p.m. · Domingos con cita previa",
   domicilioPrice: "$4.000 en Montería",
   facebook: "https://www.facebook.com/casaasmr/",
@@ -232,7 +232,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "¿Dónde están ubicados y cuál es el horario de atención?",
-    a: "Estamos ubicados en la Cra. 6 #62-31, en el exclusivo Barrio La Castellana en Montería, Córdoba. Atendemos de lunes a sábado de 8:00 a.m. a 7:00 p.m. y los domingos con cita previa para eventos y novias.",
+    a: "Estamos ubicados en Calle 41 #1B 70, Montería, Córdoba. Atendemos de lunes a sábado de 8:00 a.m. a 7:00 p.m. y los domingos con cita previa para eventos y novias.",
   },
   {
     q: "¿Los productos de la línea Casa Suntuosa tienen servicio a domicilio?",
