@@ -2,7 +2,7 @@
 
 Feature: `seo-enhancements`
 Status: Completed
-Commits: `202a1e3`, `48ae0d4`, `908ebe2`, `2de39f3`, `26188b1`
+Commits: `202a1e3`, `48ae0d4`, `908ebe2`, `2de39f3`, `26188b1`, `0e1a069`
 Delivery Strategy: `ask-on-risk`
 TDD Mode: Off (Configuración SEO, metadatos, robots.txt, sitemap y Schema JSON-LD; verificado vía `astro check` y `astro build`)
 Engram Mirror: `odd/seo-enhancements/tasks`
