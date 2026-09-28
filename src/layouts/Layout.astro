@@ -17,7 +17,7 @@ const {
 const canonicalURL = new URL(
   Astro.url.pathname,
   Astro.site || "https://casasuntuosa.shop",
-);
+).href;
 
 const ogImageURL = new URL(image, canonicalURL).href;
 
