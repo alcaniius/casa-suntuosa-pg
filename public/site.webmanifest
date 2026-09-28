@@ -1,0 +1,17 @@
+{
+  "name": "Casa Suntuosa · Salón de Belleza & Tratamientos Capilares",
+  "short_name": "Casa Suntuosa",
+  "description": "Salón de belleza de alta gama en Montería. Tratamientos de keratina, botox capilar y laboratorio profesional.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1b1016",
+  "theme_color": "#1b1016",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

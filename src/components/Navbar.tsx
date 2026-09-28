@@ -56,7 +56,7 @@ export default function Navbar() {
                   {SALON_INFO.name}
                 </span>
                 <span className="mt-0.5 text-[0.58rem] font-medium uppercase tracking-[0.3em] text-gold-600">
-                  Montería · La Castellana
+                  Montería · Calle 41 #1B 70
                 </span>
               </span>
             </a>
