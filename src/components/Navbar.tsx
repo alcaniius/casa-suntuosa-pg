@@ -50,7 +50,7 @@ export default function Navbar() {
             )}
           >
             <a href="#top" className="group flex items-center gap-3">
-              <Monogram className="h-9 w-9 shrink-0 transition-transform duration-500 group-hover:rotate-[14deg]" />
+              <Monogram className="h-10 w-10 shrink-0 transition-transform duration-500 group-hover:scale-105" />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-[1.08rem] font-semibold tracking-tight text-ink-900">
                   {SALON_INFO.name}

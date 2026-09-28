@@ -3,56 +3,26 @@ import { cn } from "@/utils/cn";
 export function Logo({ className }: { className?: string }) {
   return (
     <img
-      src="/assets/logo.svg"
+      src="/assets/logo-cs.svg"
       alt="Casa Suntuosa"
       className={cn("h-10 w-auto object-contain", className)}
       loading="eager"
+      width={40}
+      height={40}
     />
   );
 }
 
-export function Monogram({ className, light = false }: { className?: string; light?: boolean }) {
+export function Monogram({ className }: { className?: string; light?: boolean }) {
   return (
-    <span
-      className={cn(
-        "relative grid place-items-center rounded-xl p-1.5 shadow-sm",
-        light
-          ? "bg-gradient-to-br from-gold-200 via-gold-400 to-gold-600"
-          : "bg-gradient-to-br from-ink-800 via-ink-900 to-ink-950",
-        className,
-      )}
-    >
-      <span
-        className={cn(
-          "absolute inset-[1.5px] rounded-[10px] border",
-          light ? "border-ink-950/25" : "border-gold-300/35",
-        )}
-      />
-      <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden="true">
-        <defs>
-          <linearGradient id="csGoldBrand" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor={light ? "#3B2530" : "#F0DCB4"} />
-            <stop offset="55%" stopColor={light ? "#1B1016" : "#D3A95F"} />
-            <stop offset="100%" stopColor={light ? "#3B2530" : "#E3C58C"} />
-          </linearGradient>
-        </defs>
-        <path
-          d="M23.2 10.4c-1.5-2.1-3.9-3.4-6.6-3.4C11.9 7 8.4 10.9 8.4 16s3.5 9 8.2 9c2.7 0 5.1-1.3 6.6-3.4"
-          fill="none"
-          stroke="url(#csGoldBrand)"
-          strokeWidth="2.1"
-          strokeLinecap="round"
-        />
-        <path
-          d="M16 4.5c3.4 3.6 3.4 19.4 0 23"
-          fill="none"
-          stroke="url(#csGoldBrand)"
-          strokeWidth="1.2"
-          strokeLinecap="round"
-          opacity="0.75"
-        />
-      </svg>
-    </span>
+    <img
+      src="/assets/logo-cs.svg"
+      alt="Casa Suntuosa"
+      className={cn("rounded-full object-contain shrink-0 shadow-sm", className)}
+      loading="eager"
+      width={44}
+      height={44}
+    />
   );
 }
 
