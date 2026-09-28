@@ -2,6 +2,26 @@
 /// <reference types="astro/client" />
 import "react";
 
+declare global {
+  const Fragment: any;
+}
+
+declare module "astro/jsx-runtime" {
+  export const Fragment: any;
+  export const jsx: any;
+  export const jsxDEV: any;
+  export const jsxs: any;
+  export import JSX = astroHTML.JSX;
+}
+
+declare module "astro/jsx-dev-runtime" {
+  export const Fragment: any;
+  export const jsx: any;
+  export const jsxDEV: any;
+  export const jsxs: any;
+  export import JSX = astroHTML.JSX;
+}
+
 declare module "react" {
   interface Attributes {
     "client:load"?: boolean | string;
