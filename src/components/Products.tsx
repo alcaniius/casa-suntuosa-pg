@@ -26,8 +26,10 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         <div className={`relative flex items-center justify-center p-6 bg-gradient-to-br ${product.accent} overflow-hidden min-h-[260px]`}>
           <img
             src={product.image}
-            alt={product.name}
+            alt={`${product.name} - ${product.line} Casa Suntuosa`}
             loading="lazy"
+            width={224}
+            height={224}
             className="h-56 max-h-56 w-auto object-contain drop-shadow-xl transition-transform duration-[1.2s] ease-out group-hover:scale-108"
           />
           <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-ink-800 backdrop-blur shadow-sm">

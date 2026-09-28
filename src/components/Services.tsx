@@ -107,8 +107,10 @@ export default function Services() {
                 <img
                   key={s.name}
                   src={s.image}
-                  alt={s.name}
-                  loading="lazy"
+                  alt={`${s.name} - Tratamiento capilar en Casa Suntuosa Montería`}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  width={800}
+                  height={1200}
                   className={cn(
                     "h-[24rem] w-full object-cover transition-all duration-[1.1s] ease-out sm:h-[32rem]",
                     i === active

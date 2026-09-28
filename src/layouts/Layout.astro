@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import { products } from "@/data/salon";
 
 interface Props {
   title?: string;
@@ -22,93 +23,127 @@ const ogImageURL = new URL(image, canonicalURL).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "@id": "https://casasuntuosa.shop/#salon",
-  name: "Casa Suntuosa",
-  url: "https://casasuntuosa.shop",
-  logo: "https://casasuntuosa.shop/assets/logo.svg",
-  image: ogImageURL,
-  telephone: "+573225922494",
-  email: "info@casasuntuosa.shop",
-  priceRange: "$$",
-  currenciesAccepted: "COP",
-  paymentAccepted: "Efectivo, Tarjeta de Crédito, Tarjeta Débito, Nequi, Daviplata, Bancolombia",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Calle 41 #1B 70",
-    addressLocality: "Montería",
-    addressRegion: "Córdoba",
-    postalCode: "230002",
-    addressCountry: "CO",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 8.7612,
-    longitude: -75.8856,
-  },
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
-      opens: "08:00",
-      closes: "19:00",
+      "@type": "WebSite",
+      "@id": "https://casasuntuosa.shop/#website",
+      url: "https://casasuntuosa.shop/",
+      name: "Casa Suntuosa",
+      description: description,
+      inLanguage: "es-CO",
     },
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Tratamientos Capilares y Servicios de Belleza",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Alisador Progresivo Keratina + Botox",
-          description: "Alisado sin formol adaptado a la humedad de Montería, libre de vapores tóxicos.",
-        },
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "100000",
-          priceCurrency: "COP",
-        },
+    {
+      "@type": "HairSalon",
+      "@id": "https://casasuntuosa.shop/#salon",
+      name: "Casa Suntuosa",
+      url: "https://casasuntuosa.shop/",
+      logo: "https://casasuntuosa.shop/assets/logo.svg",
+      image: ogImageURL,
+      telephone: "+573225922494",
+      email: "info@casasuntuosa.shop",
+      priceRange: "$$",
+      currenciesAccepted: "COP",
+      paymentAccepted: "Efectivo, Tarjeta de Crédito, Tarjeta Débito, Nequi, Daviplata, Bancolombia",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Calle 41 #1B 70",
+        addressLocality: "Montería",
+        addressRegion: "Córdoba",
+        postalCode: "230002",
+        addressCountry: "CO",
       },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Botox Capilar Reconstructor",
-          description: "Hidratación intensiva para sellar cutícula y eliminar el frizz por completo.",
-        },
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "80000",
-          priceCurrency: "COP",
-        },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 8.7612,
+        longitude: -75.8856,
       },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Colorimetría y Balayage de Autor",
-          description: "Aclarados y matices personalizados con tecnología Plex para proteger la fibra capilar.",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          opens: "08:00",
+          closes: "19:00",
         },
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "120000",
-          priceCurrency: "COP",
-        },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Tratamientos Capilares y Servicios de Belleza",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Alisador Progresivo Keratina + Botox",
+              description: "Alisado sin formol adaptado a la humedad de Montería, libre de vapores tóxicos.",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "100000",
+              priceCurrency: "COP",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Botox Capilar Reconstructor",
+              description: "Hidratación intensiva para sellar cutícula y eliminar el frizz por completo.",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "80000",
+              priceCurrency: "COP",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Colorimetría y Balayage de Autor",
+              description: "Aclarados y matices personalizados con tecnología Plex para proteger la fibra capilar.",
+            },
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "120000",
+              priceCurrency: "COP",
+            },
+          },
+        ],
       },
-    ],
-  },
-  sameAs: [
-    "https://www.facebook.com/casaasmr/",
-    "https://www.instagram.com/casasuntuosa/?hl=es",
+      sameAs: [
+        "https://www.facebook.com/casaasmr/",
+        "https://www.instagram.com/casasuntuosa/?hl=es",
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://casasuntuosa.shop/#productos",
+      name: "Línea de Productos Profesionales Casa Suntuosa",
+      itemListElement: products.map((prod, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Product",
+          name: prod.name,
+          description: `${prod.line} - ${prod.note}. Características: ${prod.features.join(", ")}`,
+          image: new URL(prod.image, canonicalURL).href,
+          offers: {
+            "@type": "Offer",
+            price: prod.price.replace(/[^0-9]/g, ""),
+            priceCurrency: "COP",
+            availability: "https://schema.org/InStock",
+            url: "https://casasuntuosa.shop/#productos",
+          },
+        },
+      })),
+    },
   ],
 };
 ---
@@ -162,8 +197,10 @@ const jsonLd = {
       content="Casa Suntuosa · Salón de Belleza y Tratamientos Capilares en Montería"
     />
 
-    <!-- Favicon -->
+    <!-- Favicon & Mobile Manifest -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Typography: Fraunces & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -173,7 +210,7 @@ const jsonLd = {
       rel="stylesheet"
     />
 
-    <!-- Local Business Schema -->
+    <!-- Multi-Entity Schema.org Graph -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <title>{title}</title>
